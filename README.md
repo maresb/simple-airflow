@@ -8,6 +8,7 @@ Here is a slim Airflow setup with the following conditions:
 * Replace `CeleryExecutor` by `LocalExecutor` and remove Redis/Flower.
 * Enable the Docker provider.
 * Provide a clean and concise Git history showing the individual alterations to the [standard configuration](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html).
+* Use socat to access `/var/run/docker.sock` to avoid permissions issues with the Airflow user.
 
 Also, I want to be able to use Airflow in a project where it isn't installed in that project's environment, only running via Docker Compose. Towards this end, I created the [airflow-stubs](https://github.com/maresb/airflow-stubs) package.
 
