@@ -206,7 +206,7 @@ services:
       - airflow
 
   docker-proxy:
-    image: bobrik/socat@sha256:afea7dbd06940b9979cec0f1b9e8ccb7111d6feb671687ba9281a57136c1564e
+    image: alpine/socat
     command: "TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
